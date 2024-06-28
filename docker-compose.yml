@@ -3,8 +3,8 @@ services:
   nodeapp:
     build: .
     ports: 
-      -"3000:3000"
-      -"4000:8080"
+      - "3000:3000"
+      - "4000:8080"
     volumes: 
       - ./:/app:ro
       - /app/node_modules
