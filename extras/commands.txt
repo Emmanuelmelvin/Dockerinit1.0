@@ -2,3 +2,9 @@ docker biuld .          Creates a container
 docker run --name container_name image_name         Creating a container with the image created.
 docker ps       List running containers
 docker image        Lists images created
+docker exec -it container_name bash             Enter the directory of the container
+dokcer build -t name .          Update the container
+docker rm container_name -fv        Stops a running container and deletes the volume.  
+docker-compose up -d --build      Forces a new build whenever container is created
+docker-compose down         Kills all running container
+docker-compose -f docker-compose.yml -f docker-compsose.dev.yml up -d
