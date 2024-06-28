@@ -1,0 +1,4 @@
+docker biuld .          Creates a container
+docker run --name container_name image_name         Creating a container with the image created.
+docker ps       List running containers
+docker image        Lists images created
