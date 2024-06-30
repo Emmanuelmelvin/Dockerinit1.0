@@ -1,10 +1,11 @@
 const express = require('express');
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const { MONGO_USERNAME, MONGO_PASSWORD, MONGO_PORT, MONGO_IP } = require('./config/config');
 
 const app = express()
 
 mongoose
-.connect("mongodb://emmachid:emmy@172.18.0.2:27017/?authSource=admin")
+.connect(`mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`)
 .then(() => {
     console.log("Connected to MongoDB")
 })
