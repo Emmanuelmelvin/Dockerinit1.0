@@ -1,6 +1,9 @@
 const express = require('express');
+const mongoose = require("mongoose")
 
 const app = express()
+
+mongoose.connect("mongodb://emmachid:emmy@ip=address")
 
 const port = process.env.PORT || 3000
 
