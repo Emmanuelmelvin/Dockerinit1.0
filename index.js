@@ -3,7 +3,14 @@ const mongoose = require("mongoose")
 
 const app = express()
 
-mongoose.connect("mongodb://emmachid:emmy@ip=address")
+mongoose
+.connect("mongodb://emmachid:emmy@172.18.0.2/?authSource=admin")
+.then(() => {
+    console.log("Connected to MongoDB")
+})
+.catch(error => {
+    console.log(error)
+})
 
 const port = process.env.PORT || 3000
 
