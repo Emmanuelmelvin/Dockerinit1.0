@@ -41,7 +41,7 @@ exports.getOnePost = async (req, res) => {
 
 exports.createPost = async (req, res) => {
     try {
-        const post = Post.createOne(req.body)
+        const post = Post.create(req.body)
         res.status(201).json({
             status: "success",
             data: post
