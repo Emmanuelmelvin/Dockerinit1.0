@@ -8,11 +8,7 @@ const app = express()
 const mongoURI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
 const connectToDb = () => {
     mongoose
-    .connect(mongoURI , {
-        useNewUlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify: false,
-    })
+    .connect(mongoURI)
     .then(() => {
         console.log("Connected to MongoDB")
     })
