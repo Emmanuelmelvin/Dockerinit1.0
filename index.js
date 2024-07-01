@@ -4,7 +4,6 @@ const { MONGO_USERNAME, MONGO_PASSWORD, MONGO_PORT, MONGO_IP, port } = require('
 const postRouter = require("./routes/postRoutes")
 
 const app = express()
-app.use("/posts" , postRouter)
 
 const mongoURI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
 const connectToDb = () => {
@@ -28,4 +27,5 @@ app.get('/' , (req , res) => {
     res.send('<h2> Hi There  , my name is Anne James.</h2>')
 })
 
+app.use("/posts" , postRouter)
 app.listen( port , ()=> console.log(`listening on port${port}`))
