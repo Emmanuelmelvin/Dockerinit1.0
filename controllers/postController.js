@@ -58,7 +58,7 @@ exports.updatePost = async (req, res) => {
     try {
 
         const { id } = req.params.id
-        const post = await Post.findByIdAndUpdate(id , req.body)
+        const post = await Post.findByIdAndUpdate(id, req.body)
         res.status(201).json({
             status: "success",
             data: post
@@ -72,14 +72,13 @@ exports.updatePost = async (req, res) => {
     }
 }
 
-exports.getOnePost = async (req, res) => {
+exports.deletePost = async (req, res) => {
     try {
-
         const { id } = req.params.id
-        const post = await Post.findById(id)
+        await Post.findByIdAndDelete(id)
+
         res.status(201).json({
             status: "success",
-            data: post
         })
 
     } catch (error) {
