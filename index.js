@@ -20,8 +20,8 @@ const connectToDb = () => {
         console.log(error)
         setTimeout(connectToDb , 5000)
     })
-
-}     
+}   
+connectToDb()  
 
 app.get('/' , (req , res) => {
     res.send('<h2> Hi There  , my name is Anne James.</h2>')
