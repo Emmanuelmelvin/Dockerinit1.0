@@ -7,7 +7,9 @@ exports.getAllPosts = async (req, res, next) => {
             status: "success",
             data: {
                 length: posts.length,
-                posts:posts
+                data:{
+                    posts,
+                }
             }
         })
 
@@ -27,7 +29,9 @@ exports.getOnePost = async (req, res) => {
         const post = await Post.findById(id)
         res.status(201).json({
             status: "success",
-            data: post
+            data: {
+                post,
+            }
         })
 
     } catch (error) {
@@ -64,7 +68,9 @@ exports.updatePost = async (req, res) => {
         const post = await Post.findByIdAndUpdate(id, req.body)
         res.status(201).json({
             status: "success",
-            data: post
+            data: {
+                post,
+            }
         })
 
     } catch (error) {
