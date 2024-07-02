@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const { MONGO_USERNAME, MONGO_PASSWORD, MONGO_PORT, MONGO_IP, port } = require('./config/config');
 const postRouter = require("./routes/postRoutes")
+const userRouter = require("./routes/userRoute")
 
 const app = express()
 app.use(express.json())
@@ -27,4 +28,5 @@ app.get('/' , (req , res) => {
 })
 
 app.use("/posts" , postRouter)
+app.use("/" ,  userRouter)
 app.listen( port , ()=> console.log(`listening on port${port}`))
