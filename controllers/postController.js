@@ -7,7 +7,7 @@ exports.getAllPosts = async (req, res, next) => {
             status: "success",
             data: {
                 length: posts.length,
-                posts
+                posts:posts
             }
         })
 
@@ -42,9 +42,12 @@ exports.getOnePost = async (req, res) => {
 exports.createPost = async (req, res) => {
     try {
         const post = Post.create(req.body)
+        console.log(post)
         res.status(201).json({
             status: "success",
-            data: post
+            data: {
+                post,
+            }
         })
     } catch (error) {
         res.status(400).json({
