@@ -1,7 +1,6 @@
 const express = require('express')
 
 const postController = require('../controllers/postController')
-cd 
 const router = express.Router()
 
 router.route('/')
