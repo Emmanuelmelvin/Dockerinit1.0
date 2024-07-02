@@ -7,8 +7,8 @@ const app = express()
 app.use(express.json())
 
 
-// const mongoURI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
-const mongoURI = "mongodb://localhost:27017"
+const mongoURI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
+
 const connectToDb = () => {
     mongoose
     .connect(mongoURI)
