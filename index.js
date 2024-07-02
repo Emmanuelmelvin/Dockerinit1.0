@@ -4,6 +4,8 @@ const { MONGO_USERNAME, MONGO_PASSWORD, MONGO_PORT, MONGO_IP, port } = require('
 const postRouter = require("./routes/postRoutes")
 
 const app = express()
+app.use(express.json())
+
 
 const mongoURI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`
 const connectToDb = () => {
