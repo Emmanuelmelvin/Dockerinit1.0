@@ -25,7 +25,7 @@ exports.getAllPosts = async (req, res, next) => {
 exports.getOnePost = async (req, res) => {
     try {
 
-        const { id } = req.params.id
+        const { id } = req.params
         const post = await Post.findById(id)
         res.status(201).json({
             status: "success",
@@ -45,8 +45,7 @@ exports.getOnePost = async (req, res) => {
 
 exports.createPost = async (req, res) => {
     try {
-        const post = Post.create(req.body)
-        console.log(post)
+        const post = await Post.create(req.body)
         res.status(201).json({
             status: "success",
             data: {
@@ -64,7 +63,7 @@ exports.createPost = async (req, res) => {
 exports.updatePost = async (req, res) => {
     try {
 
-        const { id } = req.params.id
+        const { id } = req.params
         const post = await Post.findByIdAndUpdate(id, req.body)
         res.status(201).json({
             status: "success",
@@ -83,7 +82,7 @@ exports.updatePost = async (req, res) => {
 
 exports.deletePost = async (req, res) => {
     try {
-        const { id } = req.params.id
+        const { id } = req.params
         await Post.findByIdAndDelete(id)
 
         res.status(201).json({
