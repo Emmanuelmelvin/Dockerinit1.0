@@ -48,13 +48,13 @@ redisClient.on('ready', () => {
         cookie: {
             secure: false,
             httpOnly: true,
-            maxAge: 3000
+            maxAge: 1000 * 60 * 60 * 60 * 24
         }
     }));
 
     app.get('/', (req, res) => {
          // Log the session object to verify if a session is created
-         console.log('Session:', req.session);
+        //  console.log('Session:', req.session);
 
          // Increment visit count to ensure session is being used
          if (req.session.views) {
