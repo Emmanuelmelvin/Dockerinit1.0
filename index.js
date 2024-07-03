@@ -2,8 +2,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const session = require('express-session')
 const redis = require("redis")
-let RedisStore = require("connect-redis")(session)
-
+let RedisStore = require("connect-redis").default
 const { MONGO_USERNAME, MONGO_PASSWORD, MONGO_PORT, MONGO_IP, port, REDIS_URL, SESSION_SECRET } = require('./config/config');
 let redisClient = redis.createClient({
     host: REDIS_URL,
