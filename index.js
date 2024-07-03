@@ -6,7 +6,7 @@ let RedisStore = require("connect-redis")(session)
 
 const { MONGO_USERNAME, MONGO_PASSWORD, MONGO_PORT, MONGO_IP, port, REDIS_URL, SESSION_SECRET } = require('./config/config');
 let redisClient = redis.createClient({
-    url: REDIS_URL,
+    host: REDIS_URL,
     port: REDIS_PORT,
 
 })
