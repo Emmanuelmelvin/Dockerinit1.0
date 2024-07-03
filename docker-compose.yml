@@ -13,6 +13,7 @@ services:
     depends_on:
       - mongo
       - redis
+      - nginx
 
   mongo:
     image: mongo
