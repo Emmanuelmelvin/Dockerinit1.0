@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require("mongoose");
 const session = require('express-session');
 const redis = require("redis");
+const cors = require("cors")
 let RedisStore = require("connect-redis").default;
 
 const { MONGO_USERNAME, MONGO_PASSWORD, MONGO_PORT, MONGO_IP, port, REDIS_URL, SESSION_SECRET, REDIS_PORT } = require('./config/config');
@@ -21,6 +22,7 @@ redisClient.connect().catch(console.error);
 
 const app = express();
 app.use(express.json());
+app.use(cors({}))
 
 const mongoURI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`;
 
@@ -39,7 +41,7 @@ connectToDb();
 
 redisClient.on('ready', () => {
     console.log('Redis client connected');
-
+    app.enable("trust-proxy")
     app.use(session({
         store: new RedisStore({ client: redisClient }),
         secret: SESSION_SECRET,
