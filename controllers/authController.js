@@ -45,10 +45,11 @@ exports.login = async (req, res) => {
             })
         } else{
             return res.status(400).json({
-                status: "failed"
+                status: "failed",
+                message: "Password missmatch"
             })
         }
-        
+
     } catch (error) {
         console.log(error)
         res.status(401).json({

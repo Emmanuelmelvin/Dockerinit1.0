@@ -5,5 +5,8 @@ module.exports = {
     MONGO_COLLECTION: process.env.MONGO_COLLECTION || "mycollection",
     MONGO_USERNAME: process.env.MONGO_USERNAME || "emmachid",
     MONGO_PASSWORD: process.env.MONGO_PASSWORD || "emma",
-    port:process.env.PORT || 3000
+    port:process.env.PORT || 3000,
+    REDIS_URL: process.env.REDIS_URL || "redis",
+    REDIS_PORT: process.env.REDIS_PORT || 6379,
+    SESSION_SECRET: process.env.SESSION_SECRET,
 }
