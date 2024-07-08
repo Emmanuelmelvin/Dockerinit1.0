@@ -61,10 +61,10 @@ redisClient.on('ready', () => {
          // Increment visit count to ensure session is being used
          if (req.session.views) {
              req.session.views++;
-             res.send(`<h2> Hi There , my name is Anne James. You've visited ${req.session.views} times.</h2>`);
+             res.send(`<h2> Hi There , my name is Emmanuel Chidi . You've visited ${req.session.views} times.</h2>`);
          } else {
              req.session.views = 1;
-             res.send('<h2> Hi There , my name is Anne James. Welcome for the first time!</h2>');
+             res.send('<h2> Hi There , my name is Emmanuel Chidi. Welcome for the first time!</h2>');
          }
     });
 
