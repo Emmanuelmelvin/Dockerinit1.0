@@ -6,6 +6,7 @@ services:
       - node-app
   node-app:
     build: .
+    image: emmachid/node-app
     environment:
       - PORT=3000
     depends_on:
