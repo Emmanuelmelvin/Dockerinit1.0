@@ -13,9 +13,6 @@ services:
       - redis
   mongo:
     image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=emmachid
-      - MONGO_INITDB_ROOT_PASSWORD=emmy
     volumes:
       - mongo-db:/data/db
   redis:

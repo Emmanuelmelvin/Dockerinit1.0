@@ -17,3 +17,7 @@ services:
       - MONGO_PASSWORD=emmy
       - SESSION_SECRET=secret
     command: npm run dev
+  mongo:
+     environment:
+      - MONGO_INITDB_ROOT_USERNAME=emmachid
+      - MONGO_INITDB_ROOT_PASSWORD=emmy
