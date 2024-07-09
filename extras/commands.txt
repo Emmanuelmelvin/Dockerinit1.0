@@ -9,3 +9,4 @@ docker-compose up -d --build      Forces a new build whenever container is creat
 docker-compose down         Kills all running container
 docker-compose -f docker-compose.yml -f docker-compsose.dev.yml up -d
 docker-compose -f docker-compose.yml -f docker-compsose.dev.yml up -d  --build --no-deps node-app
+docker run --name watchtower -e WATCHTOWER_TRACE=true -e WATCHTOWER_DEBUG=true WATCHTOWER_POLL_INTERVAL=50 -v /var/run/docker.sock:/var/run/docker.sock containrr/watchtower create a container to watch for updates in an image and pulls it.
