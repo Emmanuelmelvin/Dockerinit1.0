@@ -18,6 +18,15 @@ services:
       - mongo-db:/data/db
   redis:
     image: redis
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_TRACE=true 
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_DEBUG=true
+      - WATCHTOWER_POLL_INTERVAL=50
 volumes:
   mongo-db:
  

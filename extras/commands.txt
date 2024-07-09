@@ -7,6 +7,7 @@ dokcer build -t name .          Update the container
 docker rm container_name -fv        Stops a running container and deletes the volume.  
 docker-compose up -d --build      Forces a new build whenever container is created
 docker-compose down         Kills all running container
+docker image tag container_name image_repo_name
 docker-compose -f docker-compose.yml -f docker-compsose.dev.yml up -d
 docker-compose -f docker-compose.yml -f docker-compsose.dev.yml up -d  --build --no-deps node-app
 docker run --name watchtower -e WATCHTOWER_TRACE=true -e WATCHTOWER_DEBUG=true WATCHTOWER_POLL_INTERVAL=50 -v /var/run/docker.sock:/var/run/docker.sock containrr/watchtower create a container to watch for updates in an image and pulls it.
