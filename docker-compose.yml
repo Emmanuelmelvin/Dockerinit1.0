@@ -1,6 +1,7 @@
 version: '3'
 services:
   nginx:
+    image: nginx_proxy
     build: ./nginx
     depends_on:
       - node-app
